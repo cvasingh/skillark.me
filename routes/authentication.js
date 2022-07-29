@@ -58,7 +58,7 @@ class Authentication {
                 })
             }
             else {
-                res.send(`${cbData}`);
+                res.send(cbData);
             }
         });
 

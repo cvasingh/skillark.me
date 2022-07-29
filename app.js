@@ -26,20 +26,20 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'build')));
 
 //different-different router
-app.get('/',(req,res)=>{
-  res.sendFile(__dirname+"/build/index.html");
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + "/build/index.html");
 })
-app.use('/course',courseRouter);
-app.use('/instructor',instructorRouter);
+app.use('/course', courseRouter);
+app.use('/instructor', instructorRouter);
 app.use('/payment', paymentRouter);
 app.use('/contactus', contactRouter);
 app.use('/authentication', userRouter);
-app.use('/upload',uploadRouter.router);
-app.use('/exam',examRouter);
+app.use('/upload', uploadRouter.router);
+app.use('/exam', examRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  res.sendFile(__dirname+"/build/index.html")
+  res.sendFile(__dirname + "/build/index.html")
   // next(createError(404));
 });
 
